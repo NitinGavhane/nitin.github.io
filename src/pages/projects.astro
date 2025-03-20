@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const projects = [
+  {
+    title: "TimeKeeper Android App",
+    description: "An Android application that helps users manage and track events/tasks with public and private event categorization. Features include meeting reminders, event notifications, and function scheduling.",
+    image: "src/assets/projects-cover/project1.png",
+    tags: ["Android", "Java", "Mobile Development"],
+    link: "https://devfolio.co/projects/timekeeper-b654"
+  }
+];
+---
+
+<Layout title="Projects | Nitin Gavhane" description="Explore my portfolio of projects and applications">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">My Projects</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300">
+        A showcase of my work and contributions to various technologies
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <ProjectCard
+          title={project.title}
+          description={project.description}
+          image={project.image}
+          link={project.link}
+          tags={project.tags}
+        />
+      ))}
+    </div>
+  </div>
+</Layout>

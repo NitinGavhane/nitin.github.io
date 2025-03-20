@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const achievements = [
+  "Reported over 1000+ security issues to top organizations",
+  "Ranked among the top 800 security researchers worldwide",
+  "Delivered over 3+ project solutions over a period of 1 years"
+];
+
+const metrics = [
+  { label: "Improvement in organization projects", value: "20%" },
+  { label: "Improvement in Average Handling Clients", value: "10%" },
+  { label: "Reduction in Project Code Errors", value: "90%" }
+];
+
+const skills = [
+  "AngularJs",
+  "Javascript",
+  "SQL",
+  "Git",
+  "React",
+  "TypeScript",
+  "AWS",
+  "Cyber Security"
+];
+---
+
+<Layout title="Nitin Gavhane - Software Developer Engineer">
+  <main class="min-h-screen bg-gradient-to-br from-primary-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <!-- Hero Section -->
+      <section class="text-center mb-20">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">
+          Nitin Gavhane
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+          Software Developer Engineer (SDE)
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          With over 4+ years of freelancing and 2+ years of Angular Development experience
+        </p>
+        <a 
+          href="/resume.pdf" 
+          class="inline-flex items-center px-6 py-3 mt-8 text-lg font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors duration-300"
+          download
+        >
+          Download Resume
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+        </a>
+      </section>
+
+      <!-- Key Achievements -->
+      <section class="mb-20">
+        <h2 class="text-3xl font-bold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">
+          Key Achievements
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Achievements List -->
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+            <ul class="space-y-4">
+              {achievements.map(achievement => (
+                <li class="flex items-start">
+                  <svg class="w-6 h-6 text-primary-600 dark:text-primary-400 mt-1 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-lg text-gray-700 dark:text-gray-300">{achievement}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Metrics -->
+          <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+            <ul class="space-y-6">
+              {metrics.map(metric => (
+                <li>
+                  <div class="flex justify-between items-center mb-2">
+                    <span class="text-lg text-gray-700 dark:text-gray-300">{metric.label}</span>
+                    <span class="text-xl font-bold text-primary-600 dark:text-primary-400">{metric.value}</span>
+                  </div>
+                  <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
+                    <div 
+                      class="bg-primary-600 h-2.5 rounded-full" 
+                      style={`width: ${metric.value}`}
+                    ></div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Expertise -->
+      <section>
+        <h2 class="text-3xl font-bold text-center mb-10 bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-purple-600">
+          Technical Expertise
+        </h2>
+        <div class="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl">
+          <div class="flex flex-wrap gap-4 justify-center">
+            {skills.map(skill => (
+              <div class="px-6 py-3 bg-primary-50 dark:bg-gray-700 rounded-full text-primary-700 dark:text-primary-300 font-medium hover:transform hover:-translate-y-1 transition-transform duration-300">
+                {skill}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>

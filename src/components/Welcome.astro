@@ -1,0 +1,69 @@
+<div class="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+  <div class="container mx-auto px-4 py-16">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+        <div class="w-48 h-48 md:w-64 md:h-64 relative">
+          <img
+            src="src/assets/profile.jpg"
+            alt="Nitin Gavhane - Software Developer Engineer"
+            class="rounded-full w-full h-full object-cover shadow-xl border-4 border-blue-500/20"
+            width="400"
+            height="400"
+            loading="eager"
+          />
+          <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/10 to-purple-500/10"></div>
+        </div>
+        
+        <div class="text-center md:text-left">
+          <h1 class="text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+            Nitin Gavhane
+          </h1>
+          
+          <h2 class="text-2xl text-gray-300 mt-3">
+            Software Developer Engineer (SDE)
+          </h2>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="prose prose-invert">
+          <p class="text-lg text-gray-300 leading-relaxed">
+            With over 4+ years of freelancing expertise in Cyber Security Testing, Tactical Solution Development, 
+            AWS Cloud, Business Analytics, and Solution Architecture. I have successfully collaborated with 
+            100+ clients globally through Bugcrowd and outsourcing Opensource Industry.
+          </p>
+
+          <div class="mt-8">
+            <h3 class="text-xl font-semibold mb-4">Key Achievements</h3>
+            <ul class="space-y-3 list-disc list-inside text-gray-300">
+              <li>Contributed to 40% productivity improvement</li>
+              <li>Achieved cost savings exceeding 1 million</li>
+              <li>Successfully implemented 20+ projects</li>
+            </ul>
+          </div>
+
+          <div class="mt-8">
+            <h3 class="text-xl font-semibold mb-4">Technical Expertise</h3>
+            <div class="flex flex-wrap gap-3">
+              {['Angular', 'Java', 'SQL', 'Git', 'React', 'TypeScript', 'AWS', 'Cyber Security'].map(tech => (
+                <span class="px-3 py-1 bg-blue-900/30 rounded-full text-blue-300 text-sm">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <a 
+            href="#contact" 
+            class="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg 
+                   hover:from-blue-600 hover:to-purple-700 transition-all duration-200 shadow-lg"
+          >
+            Get in Touch
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

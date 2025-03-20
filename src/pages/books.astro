@@ -1,0 +1,55 @@
+---
+// src/pages/books.astro
+import Layout from '../layouts/Layout.astro';
+import BookCard from '../components/BookCard.astro';
+
+const books = [
+  {
+    title: "The Angular Developer’s Handbook",
+    author: "Nitin Gavhane",
+    coverImage: "src/assets/ebook-cover/The_Angular_Developers_Handbook.png",
+    description: "Are you looking to sharpen your Angular skills and build powerful web applications...",
+    amazonLink: "https://amzn.in/d/bOJun5O",
+    price: "₹260.00",
+    pages: 104,
+    publishDate: "15 March 2025"
+  }
+  // Add more books here
+];
+---
+
+<Layout title="Published Books | Nitin Gavhane" description="Explore Nitin Gavhane's published technical books and ebooks on Angular development and software engineering.">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+    <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold mb-4">Published Books</h1>
+      <p class="text-lg text-gray-600 dark:text-gray-300">
+       My published technical books and ebooks on development and software engineering.
+      </p>
+    </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {books.length === 0 ? (
+          <div class="text-center py-12 col-span-full">
+            <p class="text-gray-400">
+              No books available at the moment. Please check back later.
+            </p>
+          </div>
+        ) : (
+          books.map(book => (
+            <BookCard
+              title={book.title}
+              author={book.author}
+              coverImage={book.coverImage}
+              description={book.description}
+              price={book.price}
+              pages={book.pages}
+              publishDate={book.publishDate}
+              amazonLink={book.amazonLink}
+            />
+          ))
+        )}
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,70 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const navItems = [
+  { href: '/projects', label: 'Projects' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/books', label: 'Books' },
+  { href: '/about', label: 'About' },
+];
+---
+
+<header class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <a href="/" class="font-display text-xl font-bold">
+        Nitin Gavhane
+      </a>
+
+      <nav class="hidden md:flex space-x-8">
+        {navItems.map(item => (
+          <a 
+            href={item.href}
+            class="font-medium hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <ThemeToggle />
+        <button 
+          id="mobile-menu-button"
+          class="md:hidden"
+          aria-label="Menu"
+        >
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div 
+    id="mobile-menu" 
+    class="hidden md:hidden bg-white dark:bg-gray-900 transition-colors duration-300"
+  >
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      {navItems.map(item => (
+        <a
+          href={item.href}
+          class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const button = document.getElementById('mobile-menu-button');
+  const menu = document.getElementById('mobile-menu');
+
+  button?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+</script>
